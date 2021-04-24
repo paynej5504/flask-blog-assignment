@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+<!-- start content -->
+{% block content %}
+<!-- title of page reflects the post title -->
+    <h2>{% block title %} {{ post['title'] }} {% endblock %}</h2>
+    <span class="badge badge-primary">{{ post['created'] }}</span>
+    <!-- post content -->
+<p>{{ post['content'] }}</p>
+{% endblock %}

@@ -1,0 +1,22 @@
+<!-- inherit from the base template -->
+{% extends 'base.html' %}
+
+<!-- content area -->
+{% block content %}
+    <h1>{% block title %} Welcome to FlashBlog {% endblock %}</h1>
+    <!-- show posts -->
+    {% for post in posts %}
+    <!-- return url for each post based on the id -->
+        <a href="{{ url_for('post', post_id=post['id']) }}">
+            <!-- show title of post -->
+            <h2>{{ post['title'] }}</h2>
+        </a>
+        <!-- show when post was created -->
+        <span class="badge badge-primary">{{ post['created'] }}</span>
+        <!-- link to edit view function -->
+        <a href="{{ url_for('edit', id=post['id']) }}">
+            <span class="badge badge-warning">Edit</span>
+        </a>
+        <hr>
+    {% endfor %}
+{% endblock %}

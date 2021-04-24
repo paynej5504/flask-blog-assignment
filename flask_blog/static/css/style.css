@@ -1,0 +1,8 @@
+/* style h1 tag */
+/* change color to brown, center text, add border and adding */
+h1 {
+    border: 2px #eee solid;
+    color: brown;
+    text-align: center;
+    padding: 10px;
+}
